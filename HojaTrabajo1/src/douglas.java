@@ -11,9 +11,9 @@
  */
 public interface douglas {
     
-    public void onOff();  //Método para prender/apagar la radio
+    public boolean onOff(boolean e);  //Método para prender/apagar la radio
     
-    public void Switch(); //Método para cambiar AM/FM
+    public boolean Switch(boolean e); //Método para cambiar AM/FM
     
     public float siguiente(float a);  //Método para cambiar a la siguiente estación
     
@@ -21,6 +21,6 @@ public interface douglas {
     
     public void guardar(float e,int b);  //Método para guardar una estación en favoritos
     
-    public float selecccionarFav(int b);  //Método para devolver una de las estación que estén en favoritos
+    public float seleccionarFav(int b);  //Método para devolver una de las estación que estén en favoritos
             
 }
