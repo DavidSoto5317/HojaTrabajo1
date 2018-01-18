@@ -205,12 +205,18 @@
         <Property name="text" type="java.lang.String" value="AM"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opAMActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="opFM">
       <Properties>
         <Property name="text" type="java.lang.String" value="FM"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opFMActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>

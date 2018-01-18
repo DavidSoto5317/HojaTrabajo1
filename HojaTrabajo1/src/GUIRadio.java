@@ -105,9 +105,19 @@ public class GUIRadio extends javax.swing.JFrame {
 
         opAM.setText("AM");
         opAM.setEnabled(false);
+        opAM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opAMActionPerformed(evt);
+            }
+        });
 
         opFM.setText("FM");
         opFM.setEnabled(false);
+        opFM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opFMActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         jComboBox1.setEnabled(false);
@@ -224,6 +234,7 @@ public class GUIRadio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Radio_ChinoUrizar radio = new Radio_ChinoUrizar();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -260,6 +271,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opFM.setEnabled(true);
            jLabel1.setEnabled(true);
            jComboBox1.setEnabled(true);
+           radio.onOff(true);
        }else{
             Encendido.setBackground(Color.red);
            jButton1.setEnabled(false);
@@ -281,8 +293,25 @@ public class GUIRadio extends javax.swing.JFrame {
            opFM.setEnabled(false);
            jLabel1.setEnabled(false);
            jComboBox1.setEnabled(false);
+           radio.onOff(false);
        }
     }//GEN-LAST:event_EncendidoActionPerformed
+
+    private void opFMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opFMActionPerformed
+        // TODO add your handling code here:
+        if(opFM.isSelected())
+        {
+            radio.Switch(false);
+        }
+    }//GEN-LAST:event_opFMActionPerformed
+
+    private void opAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opAMActionPerformed
+        // TODO add your handling code here:
+        if(opAM.isSelected())
+        {
+            radio.Switch(true);
+        }
+    }//GEN-LAST:event_opAMActionPerformed
 
     /**
      * @param args the command line arguments
