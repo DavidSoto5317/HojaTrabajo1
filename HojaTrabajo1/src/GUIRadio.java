@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,7 +33,7 @@ public class GUIRadio extends javax.swing.JFrame {
 
         AMFM = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        Encendido = new javax.swing.JToggleButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -54,17 +57,26 @@ public class GUIRadio extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton1.setText("<<<");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setText("jToggleButton1");
+        Encendido.setBackground(new java.awt.Color(255, 0, 0));
+        Encendido.setText("Apagado");
+        Encendido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EncendidoActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton2.setText(">>>");
+        jButton2.setEnabled(false);
 
+        jButton4.setEnabled(false);
         jButton4.setLabel("1");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,30 +84,42 @@ public class GUIRadio extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setEnabled(false);
         jButton5.setLabel("2");
 
+        jButton6.setEnabled(false);
         jButton6.setLabel("3");
 
+        jButton7.setEnabled(false);
         jButton7.setLabel("4");
 
+        jButton8.setEnabled(false);
         jButton8.setLabel("5");
 
+        jButton9.setEnabled(false);
         jButton9.setLabel("6");
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("0.0");
+        jLabel1.setEnabled(false);
 
         opAM.setText("AM");
+        opAM.setEnabled(false);
 
         opFM.setText("FM");
+        opFM.setEnabled(false);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jComboBox1.setEnabled(false);
 
         jButton3.setText("Guardar como favorito");
+        jButton3.setEnabled(false);
 
         jButton10.setText("12");
+        jButton10.setEnabled(false);
 
         jButton11.setText("7");
+        jButton11.setEnabled(false);
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -103,12 +127,16 @@ public class GUIRadio extends javax.swing.JFrame {
         });
 
         jButton12.setText("8");
+        jButton12.setEnabled(false);
 
         jButton13.setText("9");
+        jButton13.setEnabled(false);
 
         jButton14.setText("10");
+        jButton14.setEnabled(false);
 
         jButton15.setText("11");
+        jButton15.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +147,7 @@ public class GUIRadio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(Encendido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(30, 30, 30)
@@ -163,7 +191,7 @@ public class GUIRadio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Encendido, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
                 .addGap(8, 8, 8)
@@ -208,6 +236,54 @@ public class GUIRadio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void EncendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncendidoActionPerformed
+        // TODO add your handling code here:
+       if(Encendido.isSelected())
+       {
+           Encendido.setBackground(Color.green);
+           jButton1.setEnabled(true);
+           jButton2.setEnabled(true);
+           jButton3.setEnabled(true);
+           jButton4.setEnabled(true);
+           jButton5.setEnabled(true);
+           jButton6.setEnabled(true);
+           jButton7.setEnabled(true);
+           jButton8.setEnabled(true);
+           jButton9.setEnabled(true);
+           jButton10.setEnabled(true);
+           jButton11.setEnabled(true);
+           jButton12.setEnabled(true);
+           jButton13.setEnabled(true);
+           jButton14.setEnabled(true);
+           jButton15.setEnabled(true);
+           opAM.setEnabled(true);
+           opFM.setEnabled(true);
+           jLabel1.setEnabled(true);
+           jComboBox1.setEnabled(true);
+       }else{
+            Encendido.setBackground(Color.red);
+           jButton1.setEnabled(false);
+           jButton2.setEnabled(false);
+           jButton3.setEnabled(false);
+           jButton4.setEnabled(false);
+           jButton5.setEnabled(false);
+           jButton6.setEnabled(false);
+           jButton7.setEnabled(false);
+           jButton8.setEnabled(false);
+           jButton9.setEnabled(false);
+           jButton10.setEnabled(false);
+           jButton11.setEnabled(false);
+           jButton12.setEnabled(false);
+           jButton13.setEnabled(false);
+           jButton14.setEnabled(false);
+           jButton15.setEnabled(false);
+           opAM.setEnabled(false);
+           opFM.setEnabled(false);
+           jLabel1.setEnabled(false);
+           jComboBox1.setEnabled(false);
+       }
+    }//GEN-LAST:event_EncendidoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,6 +321,7 @@ public class GUIRadio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup AMFM;
+    private javax.swing.JToggleButton Encendido;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -262,7 +339,6 @@ public class GUIRadio extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JRadioButton opAM;
     private javax.swing.JRadioButton opFM;
     // End of variables declaration//GEN-END:variables
