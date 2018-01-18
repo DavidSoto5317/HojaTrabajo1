@@ -21,7 +21,7 @@ public class Radio_ChinoUrizar implements douglas{
 	*/
 	@Override
 	public boolean onOff(boolean e){ //Método para prender/apagar la radio
-		if(e==true){
+		if(e){
 			encendido_apagado = true;
 		}else{
 			encendido_apagado=false;
@@ -35,7 +35,7 @@ public class Radio_ChinoUrizar implements douglas{
 	*/
 	@Override
 	public boolean Switch(boolean e){ //Método para cambiar AM/FM
-		if(e==true){
+		if(e){
 			amfm = true; //true significa AM
 		}else{
 			amfm = false; // false significa FM
@@ -50,11 +50,19 @@ public class Radio_ChinoUrizar implements douglas{
     @Override
     public float siguiente(float a){
     	float numeroemisora = 0;
-        if (amfm==true) {
-            numeroemisora=(float)(a+5.0);
+        if (amfm) {
+            if(a<=1610){
+                numeroemisora=(float)(a+5.0);
+            }else{
+                numeroemisora = (float)530;
+            }
         }
-        else if(amfm==false){
-            numeroemisora=(float)(a+0.2);
+        else{
+            if(a<=107.9){
+                numeroemisora=(float)(a+0.2);  
+            }else{
+                numeroemisora = (float)87.9;
+            }
         }
         return numeroemisora;
     }
@@ -66,11 +74,19 @@ public class Radio_ChinoUrizar implements douglas{
     @Override
     public float anterior(float a){
     	float numeroemisora =0;
-         if (amfm==true) {
-            numeroemisora=(float)(a-5.0);
+         if (amfm) {
+            if(a>=530){
+                numeroemisora=(float)(a-5.0);
+            }else{
+                numeroemisora=1610;
+            }
         }
-        else if(amfm==false){
-            numeroemisora=(float)(a-0.2);
+        else{
+            if(a>=87.9){
+                numeroemisora=(float)(a-0.2);
+            }else{
+                numeroemisora=(float)107.9;
+            }
         }
         return numeroemisora;
     }
