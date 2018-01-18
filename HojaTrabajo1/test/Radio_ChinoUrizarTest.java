@@ -42,13 +42,15 @@ public class Radio_ChinoUrizarTest {
     @Test
     public void testOnOff() {
         System.out.println("onOff");
-        boolean e = false;
+        boolean e = true;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.onOff(e);
         assertEquals(expResult, result);
+        if(result != expResult){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -63,7 +65,10 @@ public class Radio_ChinoUrizarTest {
         boolean result = instance.Switch(e);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -72,13 +77,16 @@ public class Radio_ChinoUrizarTest {
     @Test
     public void testSiguiente() {
         System.out.println("siguiente");
-        float a = 0.0F;
+        float a = 85.5F;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        float expResult = 0.0F;
+        float expResult = 85.7F;
         float result = instance.siguiente(a);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -87,13 +95,16 @@ public class Radio_ChinoUrizarTest {
     @Test
     public void testAnterior() {
         System.out.println("anterior");
-        float a = 0.0F;
+        float a = 90.7F;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        float expResult = 0.0F;
+        float expResult = 90.5F;
         float result = instance.anterior(a);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -107,7 +118,7 @@ public class Radio_ChinoUrizarTest {
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         instance.guardar(e, b);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,11 +129,14 @@ public class Radio_ChinoUrizarTest {
         System.out.println("seleccionarFav");
         int b = 0;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        float expResult = 0.0F;
+        float expResult = -1F;
         float result = instance.seleccionarFav(b);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
     }
     
 }
