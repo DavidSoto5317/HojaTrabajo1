@@ -343,7 +343,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opFM.setEnabled(true);
            jLabel1.setEnabled(true);
            opciones.setEnabled(true);
-           radio.onOff(true);
+           radio.onOff();
        }else{
             Encendido.setBackground(Color.red);
            jButton1.setEnabled(false);
@@ -365,7 +365,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opFM.setEnabled(false);
            jLabel1.setEnabled(false);
            opciones.setEnabled(false);
-           radio.onOff(false);
+           radio.onOff();
        }
     }//GEN-LAST:event_EncendidoActionPerformed
 
@@ -373,7 +373,7 @@ public class GUIRadio extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(opFM.isSelected())
         {
-            radio.Switch(true);
+            radio.Switch();
             jLabel1.setText("87.9");
             
         }
@@ -383,7 +383,7 @@ public class GUIRadio extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(opAM.isSelected())
         {
-            radio.Switch(false);
+            radio.Switch();
             jLabel1.setText("530.0");
         }
     }//GEN-LAST:event_opAMActionPerformed

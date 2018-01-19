@@ -45,7 +45,7 @@ public class Radio_ChinoUrizarTest {
         boolean e = true;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         boolean expResult = true;
-        boolean result = instance.onOff(e);
+        boolean result = instance.onOff();
         assertEquals(expResult, result);
         if(result != expResult){
         // TODO review the generated test code and remove the default call to fail.
@@ -62,7 +62,7 @@ public class Radio_ChinoUrizarTest {
         boolean e = false;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         boolean expResult = false;
-        boolean result = instance.onOff(e);
+        boolean result = instance.onOff();
         assertEquals(expResult, result);
         if(result != expResult){
         // TODO review the generated test code and remove the default call to fail.
@@ -78,7 +78,7 @@ public class Radio_ChinoUrizarTest {
         boolean e = false;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         boolean expResult = false;
-        boolean result = instance.Switch(e);
+        boolean result = instance.Switch();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
@@ -95,7 +95,7 @@ public class Radio_ChinoUrizarTest {
         boolean e = true;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         boolean expResult = true;
-        boolean result = instance.Switch(e);
+        boolean result = instance.Switch();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
@@ -127,7 +127,7 @@ public class Radio_ChinoUrizarTest {
         System.out.println("siguiente");
         float a = 1600.0F;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        instance.Switch(false);
+        instance.Switch();
         float expResult = 1605.0F;
         float result = instance.siguiente(a);
         assertEquals(expResult, result, 0.0);
@@ -161,7 +161,7 @@ public class Radio_ChinoUrizarTest {
         float a = 1600.0F;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         float expResult = 1595.0F;
-        instance.Switch(false);
+        instance.Switch();
         float result = instance.anterior(a);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
