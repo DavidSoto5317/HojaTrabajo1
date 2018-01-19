@@ -9,7 +9,7 @@
  * @author Andres Urizar
  * @author David Soto
  */
-public interface douglas {
+public interface iradio {
     
     public void onOff();  //Método para prender/apagar la radio
     

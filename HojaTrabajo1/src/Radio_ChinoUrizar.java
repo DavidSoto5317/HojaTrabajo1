@@ -5,7 +5,7 @@
 *@version 1.0 
 */
 
-public class Radio_ChinoUrizar implements douglas{
+public class Radio_ChinoUrizar implements iradio{
 
 	private boolean encendido_apagado; //Este atributo servirá para saber si el radio esta encendido o apagado
 	private boolean amfm; //Este atributo servira para saber si la emisora esta en AM o en FM
