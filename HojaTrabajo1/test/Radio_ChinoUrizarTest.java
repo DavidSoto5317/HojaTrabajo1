@@ -53,6 +53,22 @@ public class Radio_ChinoUrizarTest {
         }
     }
 
+        /**
+     * Test of onOff method, of class Radio_ChinoUrizar.
+     */
+    @Test
+    public void testOnOff2() {
+        System.out.println("onOff");
+        boolean e = false;
+        Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
+        boolean expResult = false;
+        boolean result = instance.onOff(e);
+        assertEquals(expResult, result);
+        if(result != expResult){
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+        }
+    }
     /**
      * Test of Switch method, of class Radio_ChinoUrizar.
      */
@@ -66,11 +82,26 @@ public class Radio_ChinoUrizarTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+            fail("The test case is a prototype.");
         }
     }
 
+        /**
+     * Test of Switch method, of class Radio_ChinoUrizar.
+     */
+    @Test
+    public void testSwitch2() {
+        System.out.println("Switch");
+        boolean e = true;
+        Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
+        boolean expResult = true;
+        boolean result = instance.Switch(e);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+            fail("The test case is a prototype.");
+        }
+    }
     /**
      * Test of siguiente method, of class Radio_ChinoUrizar.
      */
@@ -84,13 +115,29 @@ public class Radio_ChinoUrizarTest {
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
         }
     }
 
     /**
-     * Test of anterior method, of class Radio_ChinoUrizar.
+     * Test of siguiente method, of class Radio_ChinoUrizar.
+     */
+    @Test
+    public void testSiguiente2() {
+        System.out.println("siguiente");
+        float a = 1600.0F;
+        Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
+        instance.Switch(false);
+        float expResult = 1605.0F;
+        float result = instance.siguiente(a);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+        fail("The test case is a prototype.");
+        }
+    }
+    /**
+     * Test of anterior method con emisora FM, of class Radio_ChinoUrizar.
      */
     @Test
     public void testAnterior() {
@@ -102,23 +149,43 @@ public class Radio_ChinoUrizarTest {
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+            fail("The test case is a prototype.");
         }
     }
-
+    /**
+     * Test of anterior method con emisora AM, of class Radio_ChinoUrizar.
+     */
+    @Test
+    public void testAnterior2() {
+        System.out.println("anterior");
+        float a = 1600.0F;
+        Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
+        float expResult = 1595.0F;
+        instance.Switch(false);
+        float result = instance.anterior(a);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+            fail("The test case is a prototype.");
+        }
+    }
     /**
      * Test of guardar method, of class Radio_ChinoUrizar.
      */
     @Test
     public void testGuardar() {
         System.out.println("guardar");
-        float e = 0.0F;
-        int b = 0;
+        float e = 89.5F;
+        int b = 5;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         instance.guardar(e, b);
+        float result = instance.seleccionarFav(5);
+        float expResult = (float)89.5;
+        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        if(result != expResult){
+           fail("The test case is a prototype."); 
+        }
     }
 
     /**
@@ -127,16 +194,33 @@ public class Radio_ChinoUrizarTest {
     @Test
     public void testSeleccionarFav() {
         System.out.println("seleccionarFav");
-        int b = 0;
+        int b = 2;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        float expResult = -1F;
+        float expResult = 96.5F;
+        instance.guardar((float)96.5, 2);
         float result = instance.seleccionarFav(b);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+            fail("The test case is a prototype.");
         }
     }
-    
+
+    /**
+     * Test of seleccionarFav method, of class Radio_ChinoUrizar.
+     */
+    @Test
+    public void testSeleccionarFav2() {
+        System.out.println("seleccionarFav");
+        int b = 10;
+        Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
+        float expResult = 1565.5F;
+        instance.guardar((float)1565.5, 10);
+        float result = instance.seleccionarFav(b);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        if(result != expResult){
+            fail("The test case is a prototype.");
+        }
+    }
 }
