@@ -18,7 +18,6 @@ public class Radio_ChinoUrizar implements douglas{
 	}
 	/**
 	*Este metodo va a servir para poder encender y apagar la radio
-	* @param e Servira para determinar el estado de encendido o apagado de una radio
 	* @return un booleano que indicara si la radio esta encendida o apagada
 	*/
 	@Override
@@ -32,7 +31,6 @@ public class Radio_ChinoUrizar implements douglas{
 	}
 	/**
 	* Este metodo nos ayudara a cambiar la radio de AM a FM
-	* @param e Servira para saber si la radio esta en AM o en FM
 	* @return un booleano para determinar si la radio esta en AM o en FM
 	*/
 	@Override
