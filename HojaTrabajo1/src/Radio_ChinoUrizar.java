@@ -18,7 +18,6 @@ public class Radio_ChinoUrizar implements douglas{
 	}
 	/**
 	*Este metodo va a servir para poder encender y apagar la radio
-	* @return un booleano que indicara si la radio esta encendida o apagada
 	*/
 	@Override
 	public void onOff(){ //Método para prender/apagar la radio
