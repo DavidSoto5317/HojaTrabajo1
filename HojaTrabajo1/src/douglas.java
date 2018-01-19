@@ -11,9 +11,9 @@
  */
 public interface douglas {
     
-    public boolean onOff();  //Método para prender/apagar la radio
+    public void onOff();  //Método para prender/apagar la radio
     
-    public boolean Switch(); //Método para cambiar AM/FM
+    public float Switch(); //Método para cambiar AM/FM
     
     public float siguiente(float a);  //Método para cambiar a la siguiente estación
     

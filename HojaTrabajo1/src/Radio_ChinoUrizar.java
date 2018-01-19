@@ -21,26 +21,26 @@ public class Radio_ChinoUrizar implements douglas{
 	* @return un booleano que indicara si la radio esta encendida o apagada
 	*/
 	@Override
-	public boolean onOff(){ //Método para prender/apagar la radio
+	public void onOff(){ //Método para prender/apagar la radio
 		if(encendido_apagado){
 			encendido_apagado = false;
 		}else{
 			encendido_apagado=true;
 		}
-		return encendido_apagado;
 	}
 	/**
 	* Este metodo nos ayudara a cambiar la radio de AM a FM
 	* @return un booleano para determinar si la radio esta en AM o en FM
 	*/
 	@Override
-	public boolean Switch(){ //Método para cambiar AM/FM
+	public float Switch(){ //Método para cambiar AM/FM
 		if(amfm){
 			amfm = false; //true significa FM
 		}else{
 			amfm = true; // false significa AM
 		}
-		return amfm;
+		float a = 0;
+                return a;
 	}
     /**
      * Metodo que cambia a la siguiente estacion

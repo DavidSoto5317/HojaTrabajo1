@@ -45,12 +45,7 @@ public class Radio_ChinoUrizarTest {
         boolean e = true;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
         boolean expResult = true;
-        boolean result = instance.onOff();
-        assertEquals(expResult, result);
-        if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        }
+        
     }
 
         /**
@@ -61,13 +56,7 @@ public class Radio_ChinoUrizarTest {
         System.out.println("onOff");
         boolean e = false;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        boolean expResult = false;
-        boolean result = instance.onOff();
-        assertEquals(expResult, result);
-        if(result != expResult){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        }
+
     }
     /**
      * Test of Switch method, of class Radio_ChinoUrizar.
@@ -77,8 +66,8 @@ public class Radio_ChinoUrizarTest {
         System.out.println("Switch");
         boolean e = false;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        boolean expResult = false;
-        boolean result = instance.Switch();
+        float expResult = 0;
+        float result = instance.Switch();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){
@@ -94,8 +83,8 @@ public class Radio_ChinoUrizarTest {
         System.out.println("Switch");
         boolean e = true;
         Radio_ChinoUrizar instance = new Radio_ChinoUrizar();
-        boolean expResult = true;
-        boolean result = instance.Switch();
+        float expResult = 0;
+        float result = instance.Switch();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         if(result != expResult){

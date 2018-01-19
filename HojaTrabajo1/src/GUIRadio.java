@@ -343,7 +343,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opFM.setEnabled(true);
            jLabel1.setEnabled(true);
            opciones.setEnabled(true);
-           radio.onOff();
+           //radio.onOff();
        }else{
             Encendido.setBackground(Color.red);
            jButton1.setEnabled(false);
