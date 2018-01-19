@@ -45,7 +45,7 @@ public class GUIRadio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         opAM = new javax.swing.JRadioButton();
         opFM = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        opciones = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -92,18 +92,43 @@ public class GUIRadio extends javax.swing.JFrame {
 
         jButton5.setEnabled(false);
         jButton5.setLabel("2");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setEnabled(false);
         jButton6.setLabel("3");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setEnabled(false);
         jButton7.setLabel("4");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setEnabled(false);
         jButton8.setLabel("5");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setEnabled(false);
         jButton9.setLabel("6");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setText("87.9");
@@ -127,14 +152,24 @@ public class GUIRadio extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        jComboBox1.setEnabled(false);
+        opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        opciones.setEnabled(false);
 
         jButton3.setText("Guardar como favorito");
         jButton3.setEnabled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("12");
         jButton10.setEnabled(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("7");
         jButton11.setEnabled(false);
@@ -146,15 +181,35 @@ public class GUIRadio extends javax.swing.JFrame {
 
         jButton12.setText("8");
         jButton12.setEnabled(false);
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("9");
         jButton13.setEnabled(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText("10");
         jButton14.setEnabled(false);
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setText("11");
         jButton15.setEnabled(false);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,7 +223,7 @@ public class GUIRadio extends javax.swing.JFrame {
                         .addGap(128, 128, 128)
                         .addComponent(jButton3)
                         .addGap(30, 30, 30)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -212,7 +267,7 @@ public class GUIRadio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Encendido, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,6 +302,7 @@ public class GUIRadio extends javax.swing.JFrame {
     Radio_ChinoUrizar radio = new Radio_ChinoUrizar();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        jLabel1.setText(String.format("%.1f",radio.seleccionarFav(1))); //Guardar No.1
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -260,6 +316,7 @@ public class GUIRadio extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(7)));
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void EncendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncendidoActionPerformed
@@ -285,7 +342,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opAM.setEnabled(true);
            opFM.setEnabled(true);
            jLabel1.setEnabled(true);
-           jComboBox1.setEnabled(true);
+           opciones.setEnabled(true);
            radio.onOff(true);
        }else{
             Encendido.setBackground(Color.red);
@@ -307,7 +364,7 @@ public class GUIRadio extends javax.swing.JFrame {
            opAM.setEnabled(false);
            opFM.setEnabled(false);
            jLabel1.setEnabled(false);
-           jComboBox1.setEnabled(false);
+           opciones.setEnabled(false);
            radio.onOff(false);
        }
     }//GEN-LAST:event_EncendidoActionPerformed
@@ -338,6 +395,61 @@ public class GUIRadio extends javax.swing.JFrame {
         emisora = radio.siguiente(Float.parseFloat(jLabel1.getText()));
         jLabel1.setText(String.format("%.1f",emisora));//(Float.toString(emisora));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(2)));  //Guardar No.2
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(3)));  //Guardar No.3
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(4)));  //Guardar No.4
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(5)));  //Guardar No.5
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(6))); //Guardar No.6
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(8))); //Guardar No. 8
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(9))); //Guardar No.9
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(10))); //Guardar No.10
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(11))); //Guardar No.11
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+         jLabel1.setText(String.format("%.1f",radio.seleccionarFav(12)));  //Guardar No.12
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         radio.guardar(Float.parseFloat(jLabel1.getText()), opciones.getSelectedIndex()+1);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -392,9 +504,9 @@ public class GUIRadio extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton opAM;
     private javax.swing.JRadioButton opFM;
+    private javax.swing.JComboBox<String> opciones;
     // End of variables declaration//GEN-END:variables
 }

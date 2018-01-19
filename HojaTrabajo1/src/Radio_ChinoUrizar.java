@@ -109,6 +109,15 @@ public class Radio_ChinoUrizar implements douglas{
         float estacion=(float)(0); //Estacion que se va a devolver, en caso de devolver 0 es porque no hay estacion guardada en el boton
         int espacio= b-1;
         estacion = guardadas[espacio];
+        if(estacion==(float)0)
+        {
+            if(amfm)
+            {
+                estacion = (float)87.9;
+            }else{
+                estacion = (float)530;
+            }
+        }
         return estacion;
     }
 
