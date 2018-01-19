@@ -20,6 +20,7 @@ public class GUIRadio extends javax.swing.JFrame {
         initComponents();
         AMFM.add(opAM);
         AMFM.add(opFM);
+        opFM.setSelected(true);
     }
 
     /**
@@ -75,6 +76,11 @@ public class GUIRadio extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton2.setText(">>>");
         jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setEnabled(false);
         jButton4.setLabel("1");
@@ -99,10 +105,11 @@ public class GUIRadio extends javax.swing.JFrame {
         jButton9.setEnabled(false);
         jButton9.setLabel("6");
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setText("0.0");
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setText("87.9");
         jLabel1.setEnabled(false);
 
+        AMFM.add(opAM);
         opAM.setText("AM");
         opAM.setEnabled(false);
         opAM.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +118,7 @@ public class GUIRadio extends javax.swing.JFrame {
             }
         });
 
+        AMFM.add(opFM);
         opFM.setText("FM");
         opFM.setEnabled(false);
         opFM.addActionListener(new java.awt.event.ActionListener() {
@@ -154,11 +162,10 @@ public class GUIRadio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(Encendido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(128, 128, 128)
                         .addComponent(jButton3)
                         .addGap(30, 30, 30)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,11 +196,14 @@ public class GUIRadio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
-                        .addComponent(opAM)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(opFM)
-                        .addGap(109, 109, 109)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(opAM)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(opFM)
+                                .addGap(109, 109, 109)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -204,9 +214,9 @@ public class GUIRadio extends javax.swing.JFrame {
                     .addComponent(Encendido, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,6 +251,11 @@ public class GUIRadio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //Botón de anterior
+        float emisora;
+        emisora = radio.anterior(Float.parseFloat(jLabel1.getText()));
+        jLabel1.setText(String.format("%.1f",emisora));//(Float.toString(emisora));
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -301,7 +316,9 @@ public class GUIRadio extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(opFM.isSelected())
         {
-            radio.Switch(false);
+            radio.Switch(true);
+            jLabel1.setText("87.9");
+            
         }
     }//GEN-LAST:event_opFMActionPerformed
 
@@ -309,9 +326,18 @@ public class GUIRadio extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(opAM.isSelected())
         {
-            radio.Switch(true);
+            radio.Switch(false);
+            jLabel1.setText("530.0");
         }
     }//GEN-LAST:event_opAMActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //Botón de siguiente
+        float emisora;
+        emisora = radio.siguiente(Float.parseFloat(jLabel1.getText()));
+        jLabel1.setText(String.format("%.1f",emisora));//(Float.toString(emisora));
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

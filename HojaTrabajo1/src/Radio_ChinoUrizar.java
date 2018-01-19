@@ -12,7 +12,7 @@ public class Radio_ChinoUrizar implements douglas{
 	private float [] guardadas = new float [12]; // Aqui se guardaran las 12 emisoras que se deseen
 
 	public Radio_ChinoUrizar(){
-
+            amfm=true;
 	}
 	/**
 	*Este metodo va a servir para poder encender y apagar la radio
@@ -36,9 +36,9 @@ public class Radio_ChinoUrizar implements douglas{
 	@Override
 	public boolean Switch(boolean e){ //Método para cambiar AM/FM
 		if(e){
-			amfm = true; //true significa AM
+			amfm = true; //true significa FM
 		}else{
-			amfm = false; // false significa FM
+			amfm = false; // false significa AM
 		}
 		return amfm;
 	}
@@ -51,17 +51,17 @@ public class Radio_ChinoUrizar implements douglas{
     public float siguiente(float a){
     	float numeroemisora = 0;
         if (amfm) {
-            if(a<=1610){
-                numeroemisora=(float)(a+5.0);
-            }else{
-                numeroemisora = (float)530;
-            }
-        }
-        else{
-            if(a<=107.9){
+            if(a<107.9){
                 numeroemisora=(float)(a+0.2);  
             }else{
                 numeroemisora = (float)87.9;
+            }
+        }
+        else{
+            if(a<1610){
+                numeroemisora=(float)(a+5.0);
+            }else{
+                numeroemisora = (float)530;
             }
         }
         return numeroemisora;
@@ -75,17 +75,17 @@ public class Radio_ChinoUrizar implements douglas{
     public float anterior(float a){
     	float numeroemisora =0;
          if (amfm) {
-            if(a>=530){
-                numeroemisora=(float)(a-5.0);
-            }else{
-                numeroemisora=1610;
-            }
-        }
-        else{
-            if(a>=87.9){
+            if(a>87.9){
                 numeroemisora=(float)(a-0.2);
             }else{
                 numeroemisora=(float)107.9;
+            } 
+        }
+        else{
+            if(a>530){
+                numeroemisora=(float)(a-5.0);
+            }else{
+                numeroemisora=1610;
             }
         }
         return numeroemisora;
